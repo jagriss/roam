@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<h1>Add Your Wishlist Travels!</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<!--<p th:text="${errorMsg}" style="color:red"></p>-->
+
+<form method="post">
+
+    <div class="form-group">
+        <label>Name
+            <input th:field="${wishlist.name}" class="form-control">
+        </label>
+    </div>
+
+    <div class="form-group">
+        <label>Location
+            <input th:field="${wishlist.location}" class="form-control">
+        </label>
+    </div>
+
+    <div class="form-group">
+        <label>Date(s)
+            <input th:field="${wishlist.date}" class="form-control">
+        </label>
+    </div>
+
+    <div class="form-group">
+        <label>Note(s)
+            <input th:field="${wishlist.note}" class="form-control">
+        </label>
+    </div>
+    <!--    <div class="form-group">-->
+    <!--        <label>Type-->
+    <!--            <select th:field="${event.category}">-->
+    <!--                <option th:each="category : ${categories}"-->
+    <!--                        th:value=" ${category}"-->
+    <!--                        th:text="${category.name} "-->
+    <!--                ></option>-->
+    <!--            </select>-->
+    <!--        </label>-->
+    <!--    </div>-->
+    <div class="form-group">
+        <input type="submit" value="Make A Wish!" class="btn btn-success">
+    </div>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head th:replace="fragments :: head">
+    <nav th:replace="fragments :: navigation"></nav>
+</head>
+
+<body class="container">
+
+<h1>My Travels</h1>
+
+<p th:unless="${places} and ${places.size()}">No Travels!</p>
+
+<nav>
+    <ul class="nav">
+        <li class="nav-item"><a class="nav-link" href="/places/create">Create New Travel</a></li>
+        <li class="nav-item"><a class="nav-link" href="/places/delete">Delete Travel</a></li>
+    </ul>
+</nav>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Date</th>
+        <th>Note(s)</th>
+    </tr>
+    </thead>
+    <tr th:each="place : ${places}">
+        <td th:text="${place.id}"></td>
+        <td th:text="${place.name}"></td>
+        <td th:text="${place.location}"></td>
+        <td th:text="${place.date}"></td>
+        <td th:text="${place.note}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

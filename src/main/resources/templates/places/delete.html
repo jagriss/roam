@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<h1>Delete Memory</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<form method="post">
+
+    <th:block th:each="place : ${places}">
+        <div class="form-group">
+            <label>
+                <span th:text="${place.name}"></span>
+                <input type="checkbox" name="placesIds" th:value="${place.id}" class="form-control">
+            </label>
+        </div>
+    </th:block>
+
+    <input type="submit" value="Delete" class="btn btn-danger">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head th:replace="fragments :: head">
+        <nav th:replace="fragments :: navigation"></nav>
+</head>
+
+<body class="container">
+
+<h1>My Wishlist</h1>
+
+<p th:unless="${wishlist} and ${wishlist.size()}">No Wishlist Travels!</p>
+
+<nav>
+    <ul class="nav">
+        <li class="nav-item"><a class="nav-link" href="/wishlist/create">Create New Wishlist Travel</a></li>
+        <li class="nav-item"><a class="nav-link" href="/wishlist/delete">Delete Travel</a></li>
+    </ul>
+</nav>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Date</th>
+        <th>Note(s)</th>
+    </tr>
+    </thead>
+    <tr th:each="wishlist : ${wishlists}">
+        <td th:text="${wishlist.id}"></td>
+        <td th:text="${wishlist.name}"></td>
+        <td th:text="${wishlist.location}"></td>
+        <td th:text="${wishlist.date}"></td>
+        <td th:text="${wishlist.note}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
