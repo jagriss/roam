@@ -16,7 +16,6 @@ Roam is built with the following technologies:
 * HTML
 * Thymeleaf
 * CSS
-* Javascript
 
 ## Why these technologies?
 I chose to use the Spring Boot, ThymeLeaf, MySQL set of technologies to solidify knowledge and skills learned in the LaunchCode bootcamp curriculum.
