@@ -1,10 +1,12 @@
 package com.travelwithme.TravelLog.controllers;
 
+import com.travelwithme.TravelLog.models.AbstractEntity;
 import com.travelwithme.TravelLog.models.data.UserRepository;
 import com.travelwithme.TravelLog.models.User;
 import com.travelwithme.TravelLog.models.dto.LoginFormDTO;
 import com.travelwithme.TravelLog.models.dto.RegisterFormDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +18,7 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.Optional;
 
+@Controller
 public class AuthenticationController {
 
     @Autowired
