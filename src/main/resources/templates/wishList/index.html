@@ -2,40 +2,48 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 
 <head th:replace="fragments :: head">
-        <nav th:replace="fragments :: navigation"></nav>
+    <nav th:replace="fragments :: navigation"></nav>
 </head>
 
-<body class="container">
+<body>
 
-<h1>My Wishlist</h1>
+<div class="container">
 
-<p th:unless="${wishlist} and ${wishlist.size()}">No Wishlist Travels!</p>
+    <nav>
+        <header class="p-1">
+            <div class="d-flex flex-wrap align-items-center">
+                <h1 class="display-4 my-3">My Wishlist</h1>
 
-<nav>
-    <ul class="nav">
-        <li class="nav-item"><a class="nav-link" href="/wishlist/create">Create New Wishlist Travel</a></li>
-        <li class="nav-item"><a class="nav-link" href="/wishlist/delete">Delete Travel</a></li>
-    </ul>
-</nav>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li class="nav-item"><a class="nav-link" href="/wishlist/create">Create New Wishlist Travel</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/wishlist/delete">Delete Travel</a></li>
+                </ul>
+            </div>
+        </header>
+    </nav>
 
-<table class="table table-striped">
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Location</th>
-        <th>Date</th>
-        <th>Note(s)</th>
-    </tr>
-    </thead>
-    <tr th:each="wishlist : ${wishlists}">
-        <td th:text="${wishlist.id}"></td>
-        <td th:text="${wishlist.name}"></td>
-        <td th:text="${wishlist.location}"></td>
-        <td th:text="${wishlist.date}"></td>
-        <td th:text="${wishlist.note}"></td>
-    </tr>
-</table>
+    <hr>
 
+    <p th:unless="${wishlist} and ${wishlist.size()}">No Wishlist Travels!</p>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Note(s)</th>
+        </tr>
+        </thead>
+        <tr th:each="wishlist : ${wishlists}">
+            <td th:text="${wishlist.id}"></td>
+            <td th:text="${wishlist.name}"></td>
+            <td th:text="${wishlist.location}"></td>
+            <td th:text="${wishlist.date}"></td>
+            <td th:text="${wishlist.note}"></td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>

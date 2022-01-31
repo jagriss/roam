@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 
-<head th:replace="fragments :: head"></head>
+<head th:replace="fragments :: head">
+    <nav th:replace="fragments :: navigation"></nav>
+</head>
+
 <body class="container">
 
 <h1>Delete Memory</h1>
-
-<nav th:replace="fragments :: navigation"></nav>
 
 <form method="post">
 

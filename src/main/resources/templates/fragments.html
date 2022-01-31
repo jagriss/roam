@@ -15,23 +15,23 @@
     <!--    <script th:src="@{/script.js}"></script>-->
 </head>
 
-<body class="container">
+<body class="container-fluid">
 
 <nav th:fragment="navigation">
     <header class="p-3 bg-dark text-white">
-    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a th:href="@{/}" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-            <img th:src="@{/images/roam.logo3.png}" width="40" height="32" class="is-rounded">
-            <span class="is-family-monospace">roam</span>
-        </a>
+        <div class="d-flex flex-wrap align-items-center">
+            <a th:href="@{/}" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <img th:src="@{/images/maps.png}" width="40" height="32" class="is-rounded">
+                <span class="navbar-brand m-1">roam</span>
+            </a>
 
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a class="nav-link px-2 text-primary"href="/places">All My Travels</a></li>
-            <li><a class="nav-link px-2 text-white"href="/wishlist">My Wishlist</a></li>
-            <li><a class="nav-link px-2 text-white" href="users/profile" >Profile</a></li>
-        </ul>
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a class="nav-link px-2 text-white"href="/places">All My Travels</a></li>
+                <li><a class="nav-link px-2 text-white"href="/wishlist">My Wishlist</a></li>
+                <li><a class="nav-link px-2 text-white" href="users/profile" >Profile</a></li>
+            </ul>
 
-        <div class="text-end">
+            <div class="text-end">
                 <th:block th:if="${user}">
                     <a th:href="@{/profile}" class="btn btn-warning">
                         <strong th:text="${user.username} + '\'s Profile'">Register</strong>
@@ -48,11 +48,10 @@
                         Log in
                     </a>
                 </th:block>
-                 </div>
             </div>
         </div>
-    </div>
     </header>
+
 </nav>
 
 </body>
