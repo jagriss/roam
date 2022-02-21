@@ -22,7 +22,7 @@ public class WishListController {
     @RequestMapping("")
     public String displayAllPlacesTraveled(Model model){
         model.addAttribute("title", "Travel Log");
-        model.addAttribute("wishlist", wishListRepository.findAll());
+        model.addAttribute("wishlists", wishListRepository.findAll());
         return "wishList/index";
     }
 
@@ -30,7 +30,6 @@ public class WishListController {
     @GetMapping("create")
     public String renderCreateWishlistForm(Model model){
         model.addAttribute("wishlist", new WishList());
-//        model.addAttribute("places", placesRepository.findAll());
         return "wishList/create";
     }
 

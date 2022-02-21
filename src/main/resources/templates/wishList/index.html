@@ -24,26 +24,75 @@
 
     <hr>
 
-    <p th:unless="${wishlist} and ${wishlist.size()}">No Wishlist Travels!</p>
+    <p th:unless="${wishlists} and ${wishlists.size()}">No Wishlist Travels!</p>
 
-    <table class="table table-borderless">
-        <thead>
-        <tr>
-            <th class="id">ID</th>
-            <th>Name</th>
-            <th>Location</th>
-            <th>Date</th>
-            <th>Note(s)</th>
-        </tr>
-        </thead>
-        <tr th:each="wishlist : ${wishlists}">
-            <td th:text="${wishlist.id}"></td>
-            <td th:text="${wishlist.name}"></td>
-            <td th:text="${wishlist.location}"></td>
-            <td th:text="${wishlist.date}"></td>
-            <td th:text="${wishlist.note}"></td>
-        </tr>
-    </table>
+    <div class="container">
+
+        <div id="accordion">
+            <div class="row">
+                <th:block th:each="wishlist : ${wishlists}">
+                    <div class="col-4">
+                        <div id="hiddenId" th:text="${wishlist.id}">
+                        </div>
+
+                        <div class="display-2 text-center">
+                            <label>
+                                <h5 th:text="${wishlist.name}" class="mb-2">
+                                </h5>
+                            </label>
+                        </div>
+
+                        <div class="card">
+                            <label>
+                                <div class="card-header" id="locationHeading">
+                                    <h5 class="mb-0">
+                                        <a class="btn" data-bs-toggle="collapse" href="#collapseLocation" aria-expanded="false" aria-controls="collapseLocation">
+                                            Location
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseLocation" class="collapse" aria-labelledby="locationHeading" data-parent="#accordion">
+                                    <div th:text="${wishlist.location}" class="card-body"></div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="card">
+                            <label>
+                                <div class="card-header" id="dateHeading">
+                                    <h5 class="mb-0">
+                                        <a class="btn" data-bs-toggle="collapse" href="#collapseDate" aria-expanded="false" aria-controls="collapseDate">
+                                            Date
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseDate" class="collapse" aria-labelledby="dateHeading" data-parent="#accordion">
+                                    <div th:text="${wishlist.date}" class="card-body"></div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="card">
+                            <label>
+                                <div class="card-header" id="noteHeading">
+                                    <h5 class="mb-0">
+                                        <a class="btn" data-bs-toggle="collapse" href="#collapseNote" aria-expanded="false" aria-controls="collapseNote">
+                                            Note(s)
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseNote" class="collapse" aria-labelledby="noteHeading" data-parent="#accordion">
+                                    <div th:text="${wishlist.note}" class="card-body"></div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </th:block>
+            </div>
+        </div>
+    </div>
+</div>
+
 </div>
 </body>
 </html>
