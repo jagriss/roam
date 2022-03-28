@@ -16,6 +16,7 @@ public class WishList {
     public String location;
     public String date;
     public String note;
+    public String image;
 
     public WishList(){}
 
@@ -49,6 +50,14 @@ public class WishList {
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public int getId() {
