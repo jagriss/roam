@@ -36,6 +36,13 @@
                 <input th:field="${wishlist.note}" class="form-control">
             </label>
         </div>
+
+        <div class="form-group">
+            <label for="image_input" class="form-label">Upload an Image</label>
+            <input th:field="${wishlist.image}" name="image" type="file" id="image_input" accept="image/png, image/jpg">
+<!--            <img id="display_image" class="image-thumbnail" src="" alt="your image" />-->
+        </div>
+
         <div class="form-group">
             <input type="submit" value="Make A Wish!" class="btn btn-success">
         </div>
