@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-
-<body>
 <nav th:replace="fragments :: navigation"></nav>
 
+<body>
 
-<section class="section">
-    <h1 class="title" th:text="${profileOwner.username}"></h1>
-    <h2 class="subtitle">
-        All your travels in one place!
-    </h2>
-    <a class="button is-primary" th:href="@{/places/create}">Add a travel</a>
-    <a class="button is-primary" th:href="@{/wishlist/create}">Add to your wishlist</a>
-</section>
+<div class="body">
 
+    <section class="section">
+        <h1 class="title" th:text="${profileOwner.username}"></h1>
+        <h2 class="subtitle">
+            All your travels in one place!
+        </h2>
+        <a class="button is-primary" th:href="@{/places/create}">Add a travel</a>
+        <a class="button is-primary" th:href="@{/wishlist/create}">Add to your wishlist</a>
+    </section>
+
+</div>
 </body>
 </html>

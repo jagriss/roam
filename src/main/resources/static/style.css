@@ -1,0 +1,62 @@
+#hiddenId {
+    visibility: hidden;
+    display: none;
+}
+
+.travel_img{
+   width: 400px;
+   height: 225px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   gap: 10px;
+   border: 1px solid black;
+}
+#display_image{
+   max-width: 100%;
+   max-height: 100%;
+   border: 1px solid black;
+   background-position: center;
+   background-size: cover;
+}
+.navbar{
+    border-bottom:1px solid #000;
+}
+
+#roam {
+    font-family: 'Alfa Slab One', cursive;
+}
+
+.body {
+    font-family: 'Lekton', sans-serif;
+}
+
+#login{
+    font-family: 'Monoton', cursive;
+}
+
+img {
+      position: relative;
+      top: 0;
+      left:0;
+      z-index:-1;
+      bottom:0;
+      right:0;
+      height:100%;
+      width: 100%;
+}
+
+.intro {
+    position: absolute;
+    height: 100%;
+    top: 40%;
+    background: #fbf7f7;
+    color: black;
+    right:0;
+    padding: 1em;
+    border-style: solid;
+    font-weight: bold;
+    z-index: 1;
+}
+

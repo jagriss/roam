@@ -8,87 +8,86 @@
 <body>
 
 <div class="container">
+    <div class="body">
 
-    <nav>
-        <header class="p-1">
-            <div class="d-flex flex-wrap align-items-center">
-                <h1 class="display-4 my-3">My Travels</h1>
+            <header class="row p-1">
+                    <h1 class="col-6 align-text-start display-4 my-3">My Travels</h1>
 
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li class="nav-item"><a class="nav-link" href="/places/create">Create New Travel</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/places/delete">Delete Travel</a></li>
-                </ul>
-            </div>
-        </header>
-    </nav>
-    <hr>
+                    <ul class="nav col-6 col-lg-auto me-lg-auto mb-2 mb-md-0 p-4 align-content-center">
+                        <li class="nav-item"><a class="nav-link" href="/places/create">Create New Travel</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/places/delete">Delete Travel</a></li>
+                    </ul>
+            </header>
+
+        <hr>
 
 
-    <p class="lead" th:unless="${places} and ${places.size()}">No Travels!</p>
+        <p class="lead" th:unless="${places} and ${places.size()}">No Travels!</p>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
 
-                <div id="accordion">
-                    <th:block th:each="place : ${places}">
+                    <div id="accordion">
+                        <th:block th:each="place : ${places}">
 
-                        <div id="hiddenId" th:text="${place.id}"></div>
+                            <div id="hiddenId" th:text="${place.id}"></div>
 
-                        <div class="display-2 text-center">
-                            <label>
-                                <h5 th:text="${place.name}" class="mb-2">
-                                </h5>
-                            </label>
-                        </div>
-
-                        <div class="card">
-                            <label>
-                                <div class="card-header" id="locationHeading">
-                                    <h5 class="mb-0">
-                                        <a class="btn" data-bs-toggle="collapse" href="#collapseLocation" aria-expanded="false" aria-controls="collapseLocation">
-                                            Location
-                                        </a>
+                            <div class="display-2 text-center">
+                                <label>
+                                    <h5 th:text="${place.name}" class="mb-2">
                                     </h5>
-                                </div>
-                                <div id="collapseLocation" class="collapse" aria-labelledby="locationHeading" data-parent="#accordion">
-                                    <div th:text="${place.location}" class="card-body"></div>
-                                </div>
-                            </label>
-                        </div>
+                                </label>
+                            </div>
 
-                        <div class="card">
-                            <label>
-                                <div class="card-header" id="dateHeading">
-                                    <h5 class="mb-0">
-                                        <a class="btn" data-bs-toggle="collapse" href="#collapseDate" aria-expanded="false" aria-controls="collapseDate">
-                                            Date
-                                        </a>
-                                    </h5>
-                                </div>
-                                <div id="collapseDate" class="collapse" aria-labelledby="dateHeading" data-parent="#accordion">
-                                    <div th:text="${place.date}" class="card-body"></div>
-                                </div>
-                            </label>
-                        </div>
+                            <div class="card">
+                                <label>
+                                    <div class="card-header" id="locationHeading">
+                                        <h5 class="mb-0">
+                                            <a class="btn" data-bs-toggle="collapse" href="#collapseLocation" aria-expanded="false" aria-controls="collapseLocation">
+                                                Location
+                                            </a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseLocation" class="collapse" aria-labelledby="locationHeading" data-parent="#accordion">
+                                        <div th:text="${place.location}" class="card-body"></div>
+                                    </div>
+                                </label>
+                            </div>
 
-                        <div class="card">
-                            <label>
-                                <div class="card-header" id="noteHeading">
-                                    <h5 class="mb-0">
-                                        <a class="btn" data-bs-toggle="collapse" href="#collapseNote" aria-expanded="false" aria-controls="collapseNote">
-                                            Note(s)
-                                        </a>
-                                    </h5>
-                                </div>
-                                <div id="collapseNote" class="collapse" aria-labelledby="noteHeading" data-parent="#accordion">
-                                    <div th:text="${place.note}" class="card-body"></div>
-                                </div>
-                            </label>
-                        </div>
-                    </th:block>
+                            <div class="card">
+                                <label>
+                                    <div class="card-header" id="dateHeading">
+                                        <h5 class="mb-0">
+                                            <a class="btn" data-bs-toggle="collapse" href="#collapseDate" aria-expanded="false" aria-controls="collapseDate">
+                                                Date
+                                            </a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseDate" class="collapse" aria-labelledby="dateHeading" data-parent="#accordion">
+                                        <div th:text="${place.date}" class="card-body"></div>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="card">
+                                <label>
+                                    <div class="card-header" id="noteHeading">
+                                        <h5 class="mb-0">
+                                            <a class="btn" data-bs-toggle="collapse" href="#collapseNote" aria-expanded="false" aria-controls="collapseNote">
+                                                Note(s)
+                                            </a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseNote" class="collapse" aria-labelledby="noteHeading" data-parent="#accordion">
+                                        <div th:text="${place.note}" class="card-body"></div>
+                                    </div>
+                                </label>
+                            </div>
+                        </th:block>
+                    </div>
+
                 </div>
-
             </div>
         </div>
     </div>
