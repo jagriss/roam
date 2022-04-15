@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 
-    <head th:replace="fragments :: head"></head>
-    <nav th:replace="fragments :: navigation"></nav>
+<head th:replace="fragments :: head"></head>
+<nav th:replace="fragments :: navigation"></nav>
 <body>
 
 <!--<h1>Roam</h1>-->
-<div class="container">
-<div class="row">
-    <div class="p-3 col-6">
-        <h3 class="display-6">Travels</h3>
-        <p class="lead">Log your existing travels! Track them for yourself or share with the people you love!</p>
-    </div>
+<div class="container-fluid">
+    <div class="body">
+        <div class="row">
+            <div class="col-12">
+                <img th:src="@{/images/roam-index.png}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <img th:src="@{/images/roam-index-2.jpeg}">
+            </div>
+        </div>
 
-    <div class="p-3 col-6">
-        <h3 class="display-6">Wishlist</h3>
-        <p class="lead">Store your dream destinations! Create a database of places you want to travel all in one place!
-            Include a name, location, and description of the things you would like to see.</p>
-    </div>
+        <div class="row intro d-flex flex-wrap justify-content-center">
+            <div class="p-3 col-6">
+                <h3 class="display-6">Travels</h3>
+                <p class="lead">Log your existing travels! Track them for yourself or share with the people you love!</p>
+            </div>
 
-
-</div>
+            <div class="p-3 col-6">
+                <h3 class="display-6">Wishlist</h3>
+                <p class="lead">Store your dream destinations! Create a database of places you want to travel all in one place!
+                    Include a name, location, and description of the things you would like to see.</p>
+            </div>
+            </div>
+        </div>
 </div>
 </body>
 </html>

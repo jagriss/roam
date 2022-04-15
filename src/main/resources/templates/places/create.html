@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 
-<head th:replace="fragments :: head">
-    <nav th:replace="fragments :: navigation"></nav>
-</head>
-
+<head th:replace="fragments :: head"></head>
 <body>
+<nav th:replace="fragments :: navigation"></nav>
 
-<h1>Add Your Travels</h1>
-
-<!--<p th:text="${errorMsg}" style="color:red"></p>-->
 <div class="container">
-    <form method="post">
+    <div class="body">
 
-        <div class="form-group">
-            <label>Nickname Your Trip
-                <input th:field="${places.name}" class="form-control">
-            </label>
-        </div>
+        <h1 class="my-3">Add Your Travels</h1>
 
-        <div class="form-group">
-            <label>Location
-                <input th:field="${places.location}" class="form-control">
-            </label>
-        </div>
+        <form method="post">
+            <!--<p th:text="${errorMsg}" style="color:red"></p>-->
+            <div class="my-2 form-group">
+                <label>Nickname Your Trip
+                    <input th:field="${places.name}" class="form-control">
+                </label>
+            </div>
 
-        <div class="form-group">
-            <label>Date(s)
-                <input th:field="${places.date}" class="form-control">
-            </label>
-        </div>
+            <div class="my-2 form-group">
+                <label>Location
+                    <input th:field="${places.location}" class="form-control">
+                </label>
+            </div>
 
-        <div class="form-group">
-            <label>Note(s)
-                <input th:field="${places.note}" class="form-control">
-            </label>
-        </div>
+            <div class="my-2 form-group">
+                <label>Date(s)
+                    <input th:field="${places.date}" class="form-control">
+                </label>
+            </div>
 
-        <div class="form-group">
-            <input type="submit" value="Create Memory" class="btn btn-success">
-        </div>
-    </form>
+            <div class="my-2 form-group">
+                <label>Note(s)
+                    <input th:field="${places.note}" class="form-control">
+                </label>
+            </div>
+
+            <div class="my-3 form-group">
+                <input type="submit" value="Create Memory" class="btn btn-success">
+            </div>
+        </form>
+    </div>
 </div>
 </body>
 </html>

@@ -1,99 +1,95 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 
-<head th:replace="fragments :: head">
-    <nav th:replace="fragments :: navigation"></nav>
-</head>
+<head th:replace="fragments :: head"></head>
+<nav th:replace="fragments :: navigation"></nav>
 
 <body>
-
-<div class="container">
-
-    <nav>
-        <header class="p-1">
-            <div class="d-flex flex-wrap align-items-center">
-                <h1 class="display-4 my-3">My Wishlist</h1>
-
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li class="nav-item"><a class="nav-link" href="/wishlist/create">Create New Wishlist Travel</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/wishlist/delete">Delete Travel</a></li>
-                </ul>
-            </div>
-        </header>
-    </nav>
-
-    <hr>
-
-    <p th:unless="${wishlists} and ${wishlists.size()}">No Wishlist Travels!</p>
-
+<div class="body">
     <div class="container">
 
-        <div id="accordion">
-            <div class="row">
-                <th:block th:each="wishlist : ${wishlists}">
-                    <div class="col-4">
-                        <div id="hiddenId" th:text="${wishlist.id}">
-                        </div>
+        <header class="row p-1">
+            <h1 class="col-6 align-text-start display-4 my-3">My Wishlist</h1>
 
-                        <div class="display-2 text-center">
-                            <label>
-                                <h5 th:text="${wishlist.name}" class="mb-2">
-                                </h5>
-                            </label>
-                        </div>
+            <ul class="nav col-6 col-lg-auto me-lg-auto mb-2 mb-md-0 p-4 align-content-center">
+                <li class="nav-item"><a class="nav-link" href="/wishlist/create">Create New Wishlist Travel</a></li>
+                <li class="nav-item"><a class="nav-link" href="/wishlist/delete">Delete Travel</a></li>
+            </ul>
+        </header>
 
-                        <div class="align-items-center">
-                            <label>
-                                <img th:src="${wishlist.image}" alt="Your trip" id="display_image" class="image-thumbnail mb-2">
-                            </label>
-                        </div>
+        <hr>
 
-                        <div class="card">
-                            <label>
-                                <div class="card-header" id="locationHeading">
-                                    <h5 class="mb-0">
-                                        <a class="btn" data-bs-toggle="collapse" href="#collapseLocation" aria-expanded="false" aria-controls="collapseLocation">
-                                            Location
-                                        </a>
+        <p th:unless="${wishlists} and ${wishlists.size()}">No Wishlist Travels!</p>
+
+        <div class="container">
+
+            <div id="accordion">
+                <div class="row">
+                    <th:block th:each="wishlist : ${wishlists}">
+                        <div class="col-4">
+                            <div id="hiddenId" th:text="${wishlist.id}">
+                            </div>
+
+                            <div class="display-2 text-center">
+                                <label>
+                                    <h5 th:text="${wishlist.name}" class="mb-2">
                                     </h5>
-                                </div>
-                                <div id="collapseLocation" class="collapse" aria-labelledby="locationHeading" data-parent="#accordion">
-                                    <div th:text="${wishlist.location}" class="card-body"></div>
-                                </div>
-                            </label>
-                        </div>
+                                </label>
+                            </div>
 
-                        <div class="card">
-                            <label>
-                                <div class="card-header" id="dateHeading">
-                                    <h5 class="mb-0">
-                                        <a class="btn" data-bs-toggle="collapse" href="#collapseDate" aria-expanded="false" aria-controls="collapseDate">
-                                            Date
-                                        </a>
-                                    </h5>
-                                </div>
-                                <div id="collapseDate" class="collapse" aria-labelledby="dateHeading" data-parent="#accordion">
-                                    <div th:text="${wishlist.date}" class="card-body"></div>
-                                </div>
-                            </label>
-                        </div>
+                            <div class="align-items-center">
+                                <label>
+                                    <img th:src="${wishlist.image}" alt="Your trip" id="display_image" class="image-thumbnail mb-2">
+                                </label>
+                            </div>
 
-                        <div class="card">
-                            <label>
-                                <div class="card-header" id="noteHeading">
-                                    <h5 class="mb-0">
-                                        <a class="btn" data-bs-toggle="collapse" href="#collapseNote" aria-expanded="false" aria-controls="collapseNote">
-                                            Note(s)
-                                        </a>
-                                    </h5>
-                                </div>
-                                <div id="collapseNote" class="collapse" aria-labelledby="noteHeading" data-parent="#accordion">
-                                    <div th:text="${wishlist.note}" class="card-body"></div>
-                                </div>
-                            </label>
+                            <div class="card">
+                                <label>
+                                    <div class="card-header" id="locationHeading">
+                                        <h5 class="mb-0">
+                                            <a class="btn" data-bs-toggle="collapse" href="#collapseLocation" aria-expanded="false" aria-controls="collapseLocation">
+                                                Location
+                                            </a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseLocation" class="collapse" aria-labelledby="locationHeading" data-parent="#accordion">
+                                        <div th:text="${wishlist.location}" class="card-body"></div>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="card">
+                                <label>
+                                    <div class="card-header" id="dateHeading">
+                                        <h5 class="mb-0">
+                                            <a class="btn" data-bs-toggle="collapse" href="#collapseDate" aria-expanded="false" aria-controls="collapseDate">
+                                                Date
+                                            </a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseDate" class="collapse" aria-labelledby="dateHeading" data-parent="#accordion">
+                                        <div th:text="${wishlist.date}" class="card-body"></div>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="card">
+                                <label>
+                                    <div class="card-header" id="noteHeading">
+                                        <h5 class="mb-0">
+                                            <a class="btn" data-bs-toggle="collapse" href="#collapseNote" aria-expanded="false" aria-controls="collapseNote">
+                                                Note(s)
+                                            </a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseNote" class="collapse" aria-labelledby="noteHeading" data-parent="#accordion">
+                                        <div th:text="${wishlist.note}" class="card-body"></div>
+                                    </div>
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                </th:block>
+                    </th:block>
+                </div>
             </div>
         </div>
     </div>

@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 
-<head th:replace="fragments :: head">
-    <nav th:replace="fragments :: navigation"></nav>
-</head>
+<head th:replace="fragments :: head"></head>
+<nav th:replace="fragments :: navigation"></nav>
+<body>
 
-<body class="container">
+<div class="container">
+    <div class="body">
 
-<h1>Delete Memory</h1>
+        <h1 class="my-3">Delete Memory</h1>
 
-<form method="post">
+        <hr>
 
-    <th:block th:each="wishlist : ${wishlists}">
-        <div class="form-group">
-            <label>
-                <span th:text="${wishlist.name}"></span>
-                <input type="checkbox" name="wishlistsIds" th:value="${wishlist.id}" class="form-control">
-            </label>
-        </div>
-    </th:block>
+        <form method="post">
 
-    <input type="submit" value="Delete" class="btn btn-danger">
-</form>
+            <th:block th:each="wishlist : ${wishlists}">
+                <div class="my-2 fs-5">
+                    <label>
+                        <input type="checkbox" name="wishlistsIds" th:value="${wishlist.id}" class="form-control">
+                        <span th:text="${wishlist.name}"></span>
+                    </label>
+                </div>
+            </th:block>
 
+            <div class="my-3">
+                <input type="submit" value="Delete" class="btn btn-danger">
+            </div>
+        </form>
+    </div>
+</div>
 </body>
 </html>
