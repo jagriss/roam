@@ -1,3 +1,7 @@
+html {
+    height: 100%;
+}
+
 #hiddenId {
     visibility: hidden;
     display: none;
@@ -13,6 +17,7 @@
    gap: 10px;
    border: 1px solid black;
 }
+
 #display_image{
    max-width: 100%;
    max-height: 100%;
@@ -20,6 +25,7 @@
    background-position: center;
    background-size: cover;
 }
+
 .navbar{
     border-bottom:1px solid #000;
 }
@@ -40,11 +46,11 @@ img {
       position: relative;
       top: 0;
       left:0;
-      z-index:-1;
       bottom:0;
       right:0;
       height:100%;
-      width: 100%;
+      width:100%;
+      padding: 1em;
 }
 
 .intro {
@@ -54,7 +60,7 @@ img {
     background: #fbf7f7;
     color: black;
     right:0;
-    padding: 1em;
+    padding: 1em, 1rm;
     border-style: solid;
     font-weight: bold;
     z-index: 1;

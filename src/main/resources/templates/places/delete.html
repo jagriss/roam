@@ -3,6 +3,7 @@
 
 <head th:replace="fragments :: head"></head>
 <nav th:replace="fragments :: navigation"></nav>
+
 <body>
 <div class="container">
     <div class="body">
@@ -16,7 +17,7 @@
             <th:block th:each="place : ${places}">
                 <div class="my-2 fs-5">
                     <label>
-                        <input type="checkbox" name="placesIds" th:value="${place.id}">
+                        <input type="checkbox" name="placesIds" th:value="${place.id}" class="form-control">
                         <span th:text="${place.name}"></span>
                     </label>
                 </div>
