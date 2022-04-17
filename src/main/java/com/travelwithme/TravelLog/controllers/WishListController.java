@@ -50,7 +50,7 @@ public class WishListController {
     public String displayDeleteWishlistForm(Model model){
         model.addAttribute("title", "Delete Travels");
         model.addAttribute("wishlist", wishListRepository.findAll());
-        return "wishList/delete";
+        return "wishlist/delete";
     }
 
     @PostMapping("delete")
