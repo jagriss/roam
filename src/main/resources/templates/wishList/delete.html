@@ -2,9 +2,10 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 
 <head th:replace="fragments :: head"></head>
-<nav th:replace="fragments :: navigation"></nav>
 
 <body>
+<nav th:replace="fragments :: navigation"></nav>
+
 <div class="container">
     <div class="body">
 
@@ -13,11 +14,10 @@
         <hr>
 
         <form method="post">
-
             <th:block th:each="wishlist : ${wishlists}">
                 <div class="my-2 fs-5">
                     <label>
-                        <input type="checkbox" name="wishlistsIds" th:value="${wishlist.id}" class="form-control">
+                        <input type="checkbox" name="wishlistsIds" th:value="${wishlist.id}">
                         <span th:text="${wishlist.name}"></span>
                     </label>
                 </div>
