@@ -53,6 +53,7 @@ public class PlacesTraveledController {
         return "places/delete";
     }
 
+//function to delete selected travels
     @PostMapping("delete")
     public String processDeletePlacesForm(@RequestParam(required = false) int[] placesIds){
 

@@ -18,7 +18,7 @@ public class WishListController {
     @Autowired
     private WishListRepository wishListRepository;
 
-    //displays travel log
+    //displays wishlist travel log
     @RequestMapping("")
     public String displayAllPlacesTraveled(Model model){
         model.addAttribute("title", "Travel Log");
@@ -26,14 +26,14 @@ public class WishListController {
         return "wishList/index";
     }
 
-    //adds new travels to empty constructor Places()
+    //adds new wishlist travels to empty constructor WishList()
     @GetMapping("create")
     public String renderCreateWishlistForm(Model model){
         model.addAttribute("wishlist", new WishList());
         return "wishList/create";
     }
 
-    //adds new travels to places repository
+    //adds new wishlist travels to wishlist repository
     @PostMapping("create")
     public String createWishlist(@ModelAttribute @Valid WishList newWishlist, Errors errors, Model model){
         if(errors.hasErrors()){
@@ -53,6 +53,7 @@ public class WishListController {
         return "wishlist/delete";
     }
 
+//    deletes wishlist travel entry
     @PostMapping("delete")
     public String processDeleteWishlistForm(@RequestParam(required = false) int[] wishlistsIds){
 

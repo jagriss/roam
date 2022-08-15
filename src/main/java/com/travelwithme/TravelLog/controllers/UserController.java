@@ -20,6 +20,7 @@ public class UserController {
     @Autowired
     UserRepository userRepository;
 
+//    create user profile
     @ModelAttribute
     public void addUserAttributes(Model model, HttpServletRequest request) {
         Object userObj = request.getAttribute("user");
@@ -28,12 +29,14 @@ public class UserController {
         }
     }
 
+//    display a users profile
     @GetMapping("/profile")
     public String displayProfile(Model model){
         model.addAttribute("profileOwner", model.getAttribute("user"));
         return "users/profile";
     }
 
+//    find and display user profile from user repository
     @GetMapping("profile/{username}")
     public String displayProfile(Model model, @PathVariable String username){
         User profileOwner = userRepository.findByUsername(username);

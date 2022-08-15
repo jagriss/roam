@@ -8,6 +8,7 @@ import java.util.Objects;
 @MappedSuperclass
 public class AbstractEntity {
 
+//    generates and extends id method for other classes
     @Id
     @GeneratedValue
     private int id;

@@ -8,6 +8,8 @@ import java.util.Objects;
 @Entity
 public class WishList {
 
+    //    wishlist class to create properties and methods displayed and stored in database
+
     @Id
     @GeneratedValue
     private int id;

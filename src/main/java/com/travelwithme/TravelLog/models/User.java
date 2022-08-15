@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 @Entity
 public class User extends AbstractEntity{
 
+    //    user class to create username and pw properties using spring framework
+
     @NotNull
     private String username;
 
