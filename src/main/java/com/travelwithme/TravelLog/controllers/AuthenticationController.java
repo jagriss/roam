@@ -21,11 +21,13 @@ import java.util.Optional;
 @Controller
 public class AuthenticationController {
 
+    //link user repository to controller
     @Autowired
     UserRepository userRepository;
 
     private static final String userSessionKey = "user";
 
+    //link user to an id that links to repository
     public User getUserFromSession(HttpSession session) {
         Integer userId = (Integer) session.getAttribute(userSessionKey);
         if (userId == null) {
@@ -92,7 +94,7 @@ public class AuthenticationController {
         model.addAttribute("title", "Log In");
         return "login";
     }
-
+    //process login and deal with errors
     @PostMapping("/login")
     public String processLoginForm(@ModelAttribute @Valid LoginFormDTO loginFormDTO,
                                    Errors errors, HttpServletRequest request,

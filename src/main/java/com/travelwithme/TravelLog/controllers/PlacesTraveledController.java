@@ -14,6 +14,7 @@ import javax.validation.Valid;
 @RequestMapping("places")
 public class PlacesTraveledController {
 
+    //link places repository
     @Autowired
     private PlacesRepository placesRepository;
 
